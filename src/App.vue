@@ -1,7 +1,8 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
-    <hello fmsg="msg from father"></hello>
+    <hello fmsg="msg from father" v-on:child-tell-me-something="listenToMyBoy"></hello>
+    <p>child tells me : {{childWords}}</p>
   </div>
 </template>
 
@@ -10,8 +11,18 @@ import Hello from './components/Hello'
 
 export default {
   name: 'app',
+  data () {
+    return {
+      childWords: ''
+    }
+  },
   components: {
     Hello
+  },
+  methods: {
+    listenToMyBoy: function (msg) {
+      this.childWords = msg
+    }
   }
 }
 </script>

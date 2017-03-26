@@ -9,6 +9,7 @@
     </ul>
     <div>{{fmsg}}</div>
     <button @click="onClickMe">click me</button>
+    <button @click="onClickOpenMouse">open mouse</button>
   </div>
 </template>
 
@@ -46,6 +47,9 @@ export default {
     },
     onClickMe: function () {
       console.log(this.fmsg)
+    },
+    onClickOpenMouse: function () {
+      this.$emit('child-tell-me-something', this.msg)
     }
   }
 }
