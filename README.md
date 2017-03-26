@@ -36,5 +36,13 @@ $ npm install
 # 开启服务，浏览器访问项目 http://localhost:8080
 $ npm run dev
 ```
+#### 自定义事件
+```bash
+# $on() 监听事件
+# $emit()  出发事件
+# $dispatch() 派发事件，事件沿着父链冒泡 events
+# $broadcast() 广播事件，事件向下传导给所有后代 events
+```
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
