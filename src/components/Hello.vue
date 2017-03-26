@@ -18,15 +18,13 @@ export default {
   data () {
     return {
       msg: 'Welcome to Your Vue.js App',
-      items: [],
+      items: Store.fetch(),
       newItem: ''
     }
   },
   watch: {
     items: {
       handler: function (val, oldVal) {
-        console.log(val, oldVal)
-        console.log(Store)
         Store.save(val)
       },
       deep: true
@@ -41,7 +39,6 @@ export default {
         label: this.newItem,
         isFinished: false
       })
-      console.log(this.newItem)
       this.newItem = ''
     }
   }
