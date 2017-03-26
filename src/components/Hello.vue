@@ -7,6 +7,8 @@
           {{item.label}}
       </li>
     </ul>
+    <div>{{fmsg}}</div>
+    <button @click="onClickMe">click me</button>
   </div>
 </template>
 
@@ -30,6 +32,7 @@ export default {
       deep: true
     }
   },
+  props: ['fmsg'],
   methods: {
     toggleFinished: function (item) {
       item.isFinished = !item.isFinished
@@ -40,6 +43,9 @@ export default {
         isFinished: false
       })
       this.newItem = ''
+    },
+    onClickMe: function () {
+      console.log(this.fmsg)
     }
   }
 }
